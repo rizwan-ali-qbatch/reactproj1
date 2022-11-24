@@ -1,36 +1,26 @@
 // import logo from './logo.svg';
-import "./App.css";
-import Table from "./components/Table";
-import Data from "./components/File.json";
-function App() {
-  // const jsonObj = [
-  //   {
-  //     id: "0001",
-  //     type: "donut",
-  //     name: "Cake",
-  //     ppu: 0.55,
-  //   },
-  //   {
-  //     id: "0002",
-  //     type: "donut",
-  //     name: "Raised",
-  //     ppu: 0.55,
-  //   },
-  //   {
-  //     id: "0003",
-  //     type: "donut",
-  //     name: "Old Fashioned",
-  //     ppu: 0.55,
-  //   },
-  //   {
-  //     id: "0004",
-  //     type: "wallnut",
-  //     name: "New Fashioned",
-  //     ppu: 0.66,
-  //   },
-  // ];
+// import { useEffect, useState } from 'react';
+import './App.css';
+// import Table from './components/Table';
+import User from './components/User';
+// import Data from "./components/File.json";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Main from './components/Main';
+import SearchBar from './components/SearchBar';
+// import UserTable from './components/UserTable';
 
-  return <Table jsonObj={Data} />;
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+        {/* <SearchBar /> */}
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/user/:userId" element={<User />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
